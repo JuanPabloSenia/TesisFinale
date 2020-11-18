@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4934c91f0fe034598ecf53fedee2e4, type: 3}
+  m_Name: Electro-CharlaIng
+  m_EditorClassIdentifier: 
+  texts:
+  - "\xA1Bienvenido estudiante! Mi nombre es Lila y te acompa\xF1ar\xE9 durante tu
+    desarrollo en Ingenier\xEDa Electr\xF3nica \xBFConoces \xE9sta Ingenier\xEDa?"
+  - 
+  - "\xA1Qu\xE9 bueno! \xA1Es incre\xEDble! \xBFNo? Aqu\xED vas a aprender un monton
+    sobre  la generaci\xF3n, transmisi\xF3n, distribuci\xF3n y aplicaci\xF3n de la
+    energ\xEDa el\xE9ctrica..."
+  - "... en instalaciones de toda clase: m\xE1quinas generadoras, transformadoras
+    y motrices de electricidad. \xA1Vamos a probar tus habilidades! Cuando est\xE9s
+    listo, ven a hablarme as\xED puedes realizar la prueba para superar \xE9sta habilidad.\r\n"
+  - "\xA1No te preocupes! En \xE9sta habitaci\xF3n tienes toda la informaci\xF3n sobre
+    \xE9sta hermosa ingenier\xEDa. Lo m\xE1s importante que debes saber es que vas
+    a adquirir conocimiento sobre generaci\xF3n, transmisi\xF3n, distribuci\xF3n y
+    aplicaci\xF3n de la energ\xEDa el\xE9ctrica..."
+  - "... en instalaciones de toda clase: m\xE1quinas generadoras, transformadoras
+    y motrices de electricidad. Cuando est\xE9s listx, ven a hablarme as\xED puedes
+    realizar la prueba para superar \xE9sta habilidad."
+  characters: 010000000000000001000000010000000100000001000000
+  yesNo: 000100000000

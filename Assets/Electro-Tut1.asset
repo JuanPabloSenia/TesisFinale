@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4934c91f0fe034598ecf53fedee2e4, type: 3}
+  m_Name: Electro-Tut1
+  m_EditorClassIdentifier: 
+  texts:
+  - "\xBF\xA1Est\xE1s listo para desafiar tus habilidades en Electr\xF3nica!? \xA1Bien!
+    Comencemos"
+  - "Esto que ves aqu\xED es un panel solar \xBFSabes lo que es? Es un dispositivo
+    que capta la energ\xEDa de la radiaci\xF3n solar para generar electricidad mediante
+    energ\xEDa solar fotovoltaica."
+  - "Las celdas pueden funcionar independientemente una de s\xED. No es necesario
+    que todas las celdas est\xE9n con carga para que el panel est\xE9 en funcionamiento. "
+  - "\xA1Bien! Ahora que sabes todo esto, debes girar las celdas del Panel Solar y
+    conectarlas hasta conseguir la carga de energ\xEDa solicitada en cada nivel, que
+    puedes ver en la bater\xEDa de la izquierda."
+  - "Recuerda que cada celda conectada suamar\xE1n un 5% de energ\xEDa \xA1Mucha suerte!"
+  characters: 0100000001000000010000000100000001000000
+  yesNo: 0000000000
