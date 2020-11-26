@@ -17,6 +17,8 @@ public class CameraController : MonoBehaviour, IPointerDownHandler
     public Vector3 targetPos;
     public float camSpeed;
 
+    public string gameSceneName;
+
     Vector3 aux;
     void Start () {
         targetPos.y = transform.position.y;
@@ -40,7 +42,7 @@ public class CameraController : MonoBehaviour, IPointerDownHandler
             {
                 if (hit.collider.name == "buttonPlay")
                 {
-                    DontDestroy.INSTANCE.StartTheCoroutine(1);
+                    DontDestroy.INSTANCE.StartTheCoroutine(gameSceneName);
                     CharacterMovement.INSTANCE.navMeshAgent.isStopped = true;
                 }
                 if (hit.collider.name == "buttonTalk")
@@ -50,7 +52,12 @@ public class CameraController : MonoBehaviour, IPointerDownHandler
                 }
                 if (hit.collider.name == "buttonInfo")
                 {
-                    Application.OpenURL("https://www.estudiaingenieria.com.ar/wp");
+                    Application.OpenURL("https://estudiaingenieria.com.ar/");
+                    CharacterMovement.INSTANCE.navMeshAgent.isStopped = true;
+                }
+                if (hit.collider.name == "buttonMenu")
+                {
+                    DontDestroy.INSTANCE.StartTheCoroutine("TreeLevelSelection");
                     CharacterMovement.INSTANCE.navMeshAgent.isStopped = true;
                 }
             }

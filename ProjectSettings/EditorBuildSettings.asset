@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/CinematicIntro.unity
+    guid: 49f22a7231b356744a38b9dc573ea6de
+  - enabled: 1
     path: Assets/Scenes/Electronica.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -14,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InfoProgramacion/Informatica.unity
     guid: 48ba4b9f8c40d144e8a3e4169a640a7f
+  - enabled: 1
+    path: Assets/Scenes/Menu/PeroniaLevel.unity
+    guid: 0f8fd4e64b520e342be93ca14515b925
+  - enabled: 1
+    path: Assets/Scenes/Menu/TreeLevelSelection.unity
+    guid: 4d641498e8bda6246b3f0784d2dfe9c0
+  - enabled: 1
+    path: Assets/Scenes/Menu/MainLevelSelection.unity
+    guid: 6d7401bfccfc5ad48a881d86884542b1
   m_configObjects: {}

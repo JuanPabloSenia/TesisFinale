@@ -77,7 +77,7 @@ public class PipeController : MonoBehaviour
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("TubosGiratorios");
     }
 
     public void CreateLevel()
@@ -90,7 +90,7 @@ public class PipeController : MonoBehaviour
         }
         if (activeLevel == 9)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("Electronica");
         }
         levelFinished = false;
         if (levelCreatorMode)
@@ -216,6 +216,6 @@ public class PipeController : MonoBehaviour
 
     public void ExitToMain()
     {
-        DontDestroy.INSTANCE.StartTheCoroutine(0);
+        DontDestroy.INSTANCE.StartTheCoroutine("Electronica");
     }
 }

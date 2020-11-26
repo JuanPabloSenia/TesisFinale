@@ -21,16 +21,19 @@ public class CinematicLogic : MonoBehaviour
 
     void Update()
     {
-        bool somethingChanged = false;
-        if (Input.GetKeyDown(KeyCode.Mouse0) && progress < parts.Length - 1)
+        if (!DontDestroy.INSTANCE.fadingIn)
         {
-            progress += 1;
-            UpdateChange();
-        }
-        if (Input.GetKeyDown(KeyCode.Mouse1) && progress > 0)
-        {
-            UpdateChange();
-            progress -= 1;
+            bool somethingChanged = false;
+            if (Input.GetKeyDown(KeyCode.Mouse0) && progress < parts.Length - 1)
+            {
+                progress += 1;
+                UpdateChange();
+            }
+            if (Input.GetKeyDown(KeyCode.Mouse1) && progress > 0)
+            {
+                UpdateChange();
+                progress -= 1;
+            }
         }
     }
 

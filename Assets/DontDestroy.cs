@@ -6,19 +6,24 @@ using UnityEngine;
 public class DontDestroy : MonoBehaviour {
 
     public static DontDestroy INSTANCE;
-    bool fadingIn = true;
-    bool fadingOut = false;
+    public bool fadingIn = true;
+    public bool fadingOut = false;
 
-	// Use this for initialization
-	void Start () {
+    public AudioClip gameMusic;
+    public AudioClip menuMusic;
+
+    public AudioSource MusicManagerSource;
+
+    // Use this for initialization
+    void Start() {
         if (INSTANCE == null)
             INSTANCE = this;
         else
             Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
-	}
-	
-	IEnumerator FadeOut(int a)
+    }
+
+    IEnumerator FadeOut(int a)
     {
         fadingOut = true;
         transform.GetChild(0).GetComponent<Animator>().SetBool("GoBlack", true);
@@ -28,23 +33,52 @@ public class DontDestroy : MonoBehaviour {
         fadingOut = false;
         SceneManager.LoadScene(a);
     }
+    IEnumerator FadeOut(string a)
+    {
+        fadingOut = true;
+        transform.GetChild(0).GetComponent<Animator>().SetBool("GoBlack", true);
+        yield return new WaitForSeconds(1);
+        transform.GetChild(0).GetComponent<Animator>().SetBool("GoBlack", false);
+        fadingIn = true;
+        fadingOut = false;
+        if ((a == "TubosGiratorios" || a == "Informatica") && MusicManagerSource.clip != gameMusic)
+        {
+            MusicManagerSource.clip = gameMusic;
+            MusicManagerSource.Play();
+        }
+        else if (MusicManagerSource.clip != menuMusic)
+        {
+            MusicManagerSource.clip = menuMusic;
+            MusicManagerSource.Play();
+        }
+        SceneManager.LoadScene(a);
+    }
 
     public void StartTheCoroutine(int a)
     {
-        StartCoroutine(FadeOut(a));
+        if (fadingOut == false)
+            StartCoroutine(FadeOut(a));
+    }
+
+    public void StartTheCoroutine(string a)
+    {
+        if (fadingOut == false)
+            StartCoroutine(FadeOut(a));
     }
 
     void Update()
     {
-        if (Camera.main.GetComponent<AudioSource>().volume >= .6f)
+        if (MusicManagerSource.volume >= .6f)
             fadingIn = false;
         if (fadingIn)
         {
-            Camera.main.GetComponent<AudioSource>().volume = Mathf.Lerp(Camera.main.GetComponent<AudioSource>().volume, .7f, Time.deltaTime);
+            MusicManagerSource.volume = Mathf.Lerp(MusicManagerSource.volume, .7f, Time.deltaTime);
         }
         if (fadingOut)
         {
-            Camera.main.GetComponent<AudioSource>().volume = Mathf.Lerp(Camera.main.GetComponent<AudioSource>().volume, 0, Time.deltaTime);
+            MusicManagerSource.volume = Mathf.Lerp(MusicManagerSource.volume, 0, Time.deltaTime);
         }
+        Vector3 camPos = GameObject.Find("Main Camera").transform.position;
+        MusicManagerSource.transform.position = camPos;
     }
 }

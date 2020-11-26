@@ -19,6 +19,7 @@ public class CharacterMovement : MonoBehaviour {
     public GameObject spritePlay;
     public GameObject spriteTalk;
     public GameObject spriteInfo;
+    public GameObject spriteMenu;
 
     Vector2 pastPosition;
 
@@ -73,6 +74,9 @@ public class CharacterMovement : MonoBehaviour {
             case "collInfo":
                 spriteInfo.SetActive(true);
                 break;
+            case "collMenu":
+                spriteMenu.SetActive(true);
+                break;
         }
     }
 
@@ -88,6 +92,9 @@ public class CharacterMovement : MonoBehaviour {
                 break;
             case "collInfo":
                 spriteInfo.SetActive(false);
+                break;
+            case "collMenu":
+                spriteMenu.SetActive(false);
                 break;
         }
     }
