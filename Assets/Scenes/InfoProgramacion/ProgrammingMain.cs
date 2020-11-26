@@ -169,7 +169,7 @@ public class ProgrammingMain : MonoBehaviour
             }
             if (i == cursor)
             {
-                cursorTransform.position = letters[i].transform.position - Vector3.right;
+                cursorTransform.position = letters[i].transform.position - Vector3.right + (Vector3.right / 2);
             }
         }
         //Exception for the cursor to work on the last letter
