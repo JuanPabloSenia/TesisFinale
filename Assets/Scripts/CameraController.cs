@@ -42,6 +42,7 @@ public class CameraController : MonoBehaviour, IPointerDownHandler
             {
                 if (hit.collider.name == "buttonPlay")
                 {
+                    ProgrammingMain.currentLevel = 1;
                     DontDestroy.INSTANCE.StartTheCoroutine(gameSceneName);
                     CharacterMovement.INSTANCE.navMeshAgent.isStopped = true;
                 }

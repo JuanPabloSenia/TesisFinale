@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class ProgrammingMain : MonoBehaviour
 {
+    public static int currentLevel = 1;
+    public static int maxLevel = 6;
+
     public bool isPlaying = false;
 
     public int cursor = 0;
@@ -68,6 +71,17 @@ public class ProgrammingMain : MonoBehaviour
                 {
                     case "Replay":
                         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                        break;
+                    case "NextLevel":
+                        if (currentLevel == maxLevel)
+                        {
+                            SceneManager.LoadScene("Informatica");
+                        }
+                        else
+                        {
+                            currentLevel++;
+                            SceneManager.LoadScene("Info_Lvl_" + currentLevel);
+                        }
                         break;
                     case "Left":
                         if (cursor > 0)
@@ -256,7 +270,7 @@ public class ProgrammingMain : MonoBehaviour
                         if (!usedLetter[progressInGame])
                         {
                             usedLetter[progressInGame] = true;
-                            for (int i = progressInGame; i > 0; i--)
+                            for (int i = progressInGame; i >= 0; i--)
                             {
                                 if (currentList[i].aName == actionName.START_REPEAT && !usedLetter[i])
                                 {

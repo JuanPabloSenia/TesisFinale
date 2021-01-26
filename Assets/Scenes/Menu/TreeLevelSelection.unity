@@ -175,7 +175,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f235b9795badb99489e728f27790f5f3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1422fb52571aba845af51e567b6a10b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isChecker: 0
-  sceneToOpen: Electronica
+  sceneToOpen: a
 --- !u!65 &441425275
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isChecker: 0
-  sceneToOpen: Electronica
+  sceneToOpen: a
 --- !u!65 &1002701856
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -559,7 +559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isChecker: 0
-  sceneToOpen: Electronica
+  sceneToOpen: Informatica
 --- !u!65 &1491197521
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -668,7 +668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isChecker: 0
-  sceneToOpen: Electronica
+  sceneToOpen: a
 --- !u!65 &1549981107
 BoxCollider:
   m_ObjectHideFlags: 0
