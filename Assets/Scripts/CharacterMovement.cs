@@ -10,6 +10,11 @@ public class CharacterMovement : MonoBehaviour {
 
     public NavMeshAgent navMeshAgent;
 
+    public SpriteRenderer maleSprite;
+    public SpriteRenderer femaleSprite;
+    public Animator maleAnim;
+    public Animator femaleAnim;
+
     public SpriteRenderer playerSprite;
     public Animator anim;
     public Sprite plFront;
@@ -24,6 +29,21 @@ public class CharacterMovement : MonoBehaviour {
     Vector2 pastPosition;
 
 	void Start () {
+        Debug.Log(DontDestroy.isMale);
+        if (DontDestroy.isMale)
+        {
+            playerSprite = maleSprite;
+            femaleSprite.gameObject.SetActive(false);
+
+            anim = maleAnim;
+        }
+        else
+        {
+            playerSprite = femaleSprite;
+            maleSprite.gameObject.SetActive(false);
+
+            anim = femaleAnim;
+        }
         pastPosition = new Vector2(transform.position.x, transform.position.z);
         INSTANCE = this;
 	}

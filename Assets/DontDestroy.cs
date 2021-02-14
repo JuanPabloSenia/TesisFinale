@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class DontDestroy : MonoBehaviour {
 
+    public static bool isMale;
+
     public static DontDestroy INSTANCE;
     public bool fadingIn = true;
     public bool fadingOut = false;
@@ -68,6 +70,7 @@ public class DontDestroy : MonoBehaviour {
 
     void Update()
     {
+        Debug.Log(isMale+ " is male");
         if (MusicManagerSource.volume >= .6f)
             fadingIn = false;
         if (fadingIn)

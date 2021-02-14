@@ -194,7 +194,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767437998}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.3, y: 3.1, z: 5}
+  m_LocalPosition: {x: 21.3, y: 0.9, z: 5}
   m_LocalScale: {x: 5.026178, y: 5.026178, z: 5.026178}
   m_Children: []
   m_Father: {fileID: 0}
@@ -232,6 +232,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isChecker: 0
+  isSelectMale: 0
+  isSelectFemale: 0
   sceneToOpen: PeroniaLevel
 --- !u!65 &1491197521
 BoxCollider:
@@ -303,8 +305,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491197519}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.4, y: 7.11, z: -7.0212}
-  m_LocalScale: {x: 2.13712, y: 2.13712, z: 2.13712}
+  m_LocalPosition: {x: -21.4, y: 10.04, z: -7.0212}
+  m_LocalScale: {x: 2.46645, y: 2.46645, z: 2.46645}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -341,6 +343,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isChecker: 0
+  isSelectMale: 0
+  isSelectFemale: 0
   sceneToOpen: TreeLevelSelection
 --- !u!65 &1574991561
 BoxCollider:
@@ -412,8 +416,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1574991559}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.1, y: 7.51, z: -7.0212}
-  m_LocalScale: {x: 2.13712, y: 2.13712, z: 2.13712}
+  m_LocalPosition: {x: 21.1, y: 10.44, z: -7.0212}
+  m_LocalScale: {x: 2.46645, y: 2.46645, z: 2.46645}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -515,4 +519,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isChecker: 1
+  isSelectMale: 0
+  isSelectFemale: 0
   sceneToOpen: 

@@ -7,6 +7,9 @@ public class OpenSceneOnClick : MonoBehaviour
 {
     public bool isChecker = false;
 
+    public bool isSelectMale = false;
+    public bool isSelectFemale = false;
+
     public string sceneToOpen;
 
     void Start()
@@ -24,6 +27,15 @@ public class OpenSceneOnClick : MonoBehaviour
                 Ray ray = new Ray(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector3.forward);
                 if (Physics.Raycast(ray, out hit, 100))
                 {
+                    if (hit.transform.GetComponent<OpenSceneOnClick>().isSelectFemale)
+                    {
+                        DontDestroy.isMale = false;
+                    }
+                    if (hit.transform.GetComponent<OpenSceneOnClick>().isSelectMale)
+                    {
+                        DontDestroy.isMale = true;
+                    }
+
                     hit.transform.GetComponent<OpenSceneOnClick>().StartScene();
                 }
             }

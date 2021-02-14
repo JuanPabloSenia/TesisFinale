@@ -194,8 +194,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767437998}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.9, y: 3.1, z: 5}
-  m_LocalScale: {x: 3.501537, y: 3.501537, z: 3.501537}
+  m_LocalPosition: {x: 1.6, y: -1.5, z: 5}
+  m_LocalScale: {x: 2.9675176, y: 2.9675176, z: 2.9675176}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -232,6 +232,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isChecker: 0
+  isSelectMale: 0
+  isSelectFemale: 0
   sceneToOpen: MainLevelSelection
 --- !u!65 &1491197521
 BoxCollider:
@@ -303,7 +305,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491197519}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.89, y: 10.37, z: -7.0212}
+  m_LocalPosition: {x: 21.89, y: 10, z: -7.0212}
   m_LocalScale: {x: 2.5164, y: 2.5164, z: 2.5164}
   m_Children: []
   m_Father: {fileID: 0}
@@ -406,4 +408,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isChecker: 1
+  isSelectMale: 0
+  isSelectFemale: 0
   sceneToOpen: 
