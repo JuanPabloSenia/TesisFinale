@@ -35,6 +35,9 @@ public class ProgrammingMain : MonoBehaviour
     public GameObject tryButton;
     public GameObject cancelButton;
 
+    public RectTransform canvasTransform;
+    public GameObject badRepeatsAlert;
+
     public enum actionName
     {
         EMPTY,
@@ -107,6 +110,8 @@ public class ProgrammingMain : MonoBehaviour
                         else
                         {
                             Debug.Log("BadRepeats");
+                            GameObject alertAux = Instantiate(badRepeatsAlert, canvasTransform);
+                            Destroy(alertAux, 2f);
                             break;
                         }
                         ResetWorld();
