@@ -31,6 +31,7 @@ public class ProgrammingMain : MonoBehaviour
 
     public static int currentCoins = 0;
     public int totalCoins = 0;
+    public static int totalCoinsStatic = 0;
 
     public GameObject doingHighlight;
     public GameObject gratzScreen;
@@ -63,6 +64,8 @@ public class ProgrammingMain : MonoBehaviour
         if (dialog != null)
             dialog.StartDialogue();
         totalCoins = coinsContainer.childCount;
+        totalCoinsStatic = totalCoins;
+        GameObject.Find("Counter").GetComponent<TMPro.TextMeshPro>().text = "0/" + totalCoins;
         currentCoins = 0;
 
         letters = new Transform[textContainer.childCount];
