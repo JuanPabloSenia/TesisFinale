@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class OpenSceneOnClick : MonoBehaviour
 {
+    public bool isGoLeftCinematic = false;
+    public bool isGoRightCinematic = false;
+
     public bool isChecker = false;
 
     public bool isSelectMale = false;
@@ -19,7 +22,7 @@ public class OpenSceneOnClick : MonoBehaviour
     
     void Update()
     {
-        if (isChecker)
+        if (isChecker && !DontDestroy.INSTANCE.fadingIn)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
@@ -27,6 +30,14 @@ public class OpenSceneOnClick : MonoBehaviour
                 Ray ray = new Ray(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector3.forward);
                 if (Physics.Raycast(ray, out hit, 100))
                 {
+                    if (hit.transform.GetComponent<OpenSceneOnClick>().isGoLeftCinematic)
+                    {
+                        CinematicLogic.INSTANCE.wentRight(false);
+                    }
+                    if (hit.transform.GetComponent<OpenSceneOnClick>().isGoRightCinematic)
+                    {
+                        CinematicLogic.INSTANCE.wentRight(true);
+                    }
                     if (hit.transform.GetComponent<OpenSceneOnClick>().isSelectFemale)
                     {
                         DontDestroy.isMale = false;
@@ -44,6 +55,7 @@ public class OpenSceneOnClick : MonoBehaviour
 
     public void StartScene()
     {
-        DontDestroy.INSTANCE.StartTheCoroutine(sceneToOpen);
+        if (sceneToOpen != "")
+            DontDestroy.INSTANCE.StartTheCoroutine(sceneToOpen);
     }
 }

@@ -4,7 +4,8 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -26,7 +27,8 @@ MonoBehaviour:
     a adquirir conocimiento sobre generaci\xF3n, transmisi\xF3n, distribuci\xF3n y
     aplicaci\xF3n de la energ\xEDa el\xE9ctrica..."
   - "... en instalaciones de toda clase: m\xE1quinas generadoras, transformadoras
-    y motrices de electricidad. Cuando est\xE9s listx, ven a hablarme as\xED puedes
-    realizar la prueba para superar \xE9sta habilidad."
+    y motrices de electricidad. Cuando est\xE9s listx, prueba el minijuego en la computadora
+    de all\xE1!"
   characters: 010000000000000001000000010000000100000001000000
   yesNo: 000100000000
+  isEnder: 000000010000

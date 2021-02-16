@@ -9,6 +9,7 @@ public class DialogPart : ScriptableObject
     public string[] texts;
     public DialogPart.Personaje[] characters;
     public bool[] yesNo;
+    public bool[] isEnder;
 
     public enum Personaje
     {

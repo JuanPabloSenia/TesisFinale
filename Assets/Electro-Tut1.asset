@@ -4,7 +4,8 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -25,3 +26,4 @@ MonoBehaviour:
   - "Recuerda que cada celda conectada suamar\xE1n un 5% de energ\xEDa \xA1Mucha suerte!"
   characters: 0100000001000000010000000100000001000000
   yesNo: 0000000000
+  isEnder: 0000000000

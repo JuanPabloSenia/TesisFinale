@@ -292,7 +292,6 @@ GameObject:
   - component: {fileID: 1491197522}
   - component: {fileID: 1491197521}
   - component: {fileID: 1491197520}
-  - component: {fileID: 1491197524}
   m_Layer: 0
   m_Name: SelectFemale
   m_TagString: Untagged
@@ -312,6 +311,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39c416e71c196d847b24fb5a13b29206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoLeftCinematic: 0
+  isGoRightCinematic: 0
   isChecker: 0
   isSelectMale: 0
   isSelectFemale: 1
@@ -392,25 +393,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1491197524
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1491197519}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0694703a8cc9ab74ab5ff4cd9cc13743, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1512159840
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,6 +516,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39c416e71c196d847b24fb5a13b29206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoLeftCinematic: 0
+  isGoRightCinematic: 0
   isChecker: 0
   isSelectMale: 1
   isSelectFemale: 0
@@ -710,6 +694,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39c416e71c196d847b24fb5a13b29206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoLeftCinematic: 0
+  isGoRightCinematic: 0
   isChecker: 1
   isSelectMale: 0
   isSelectFemale: 0

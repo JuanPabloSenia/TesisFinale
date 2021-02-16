@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4934c91f0fe034598ecf53fedee2e4, type: 3}
+  m_Name: Info-Tut1
+  m_EditorClassIdentifier: 
+  texts:
+  - "Aqui pondras a prueba tus habilidades de Programaci\xF3n l\xF3gica \xBFEstas
+    listx? \xA1Bien! Comencemos"
+  - "Como mencionamos antes, los sistemas automatizados o aplicaciones digitales tienen
+    una base l\xF3gica independiente del lenguaje de programaci\xF3n utilizado. Es
+    decir que comprender bien la l\xF3gica es vital para el desarrollo de estos sistemas."
+  - "En este minijuego pondremos en pr\xE1ctica conceptos b\xE1sicos de la programaci\xF3n
+    l\xF3gica.\nTendremos que ayudar a nuestro peque\xF1o robot a recolectar los distintos
+    suministros  programando conjuntos de acciones para guiar su movimiento."
+  - "Podr\xE1s darle la orden de avanzar, girar o indicarle que repita una vez las
+    acciones situadas entre los corchetes.\nEvita los obst\xE1culos y consigue muchos
+    suministros!"
+  characters: 01000000010000000100000001000000
+  yesNo: 00000000
+  isEnder: 00000000

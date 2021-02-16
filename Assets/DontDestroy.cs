@@ -16,6 +16,9 @@ public class DontDestroy : MonoBehaviour {
 
     public AudioSource MusicManagerSource;
 
+    public Sprite malePj;
+    public Sprite femalePj;
+
     // Use this for initialization
     void Start() {
         if (INSTANCE == null)

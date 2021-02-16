@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class DialogueController : MonoBehaviour {
 
+    public bool shouldWave = false;
+
     public static DialogueController INSTANCE;
 
     public bool onDialogue = false;
@@ -28,14 +30,21 @@ public class DialogueController : MonoBehaviour {
 
     public int progress;
 
+    public bool nextEnds = false;
+
     void Awake () {
         INSTANCE = this;
         progress = 0;
+        imagePlayer.sprite = DontDestroy.isMale ? DontDestroy.INSTANCE.malePj : DontDestroy.INSTANCE.femalePj;
 	}
     public void NextDialogue()
     {
         if (activeChat.characters.Length > progress)
         {
+            if (nextEnds)
+            {
+                EndDialogue();
+            }
             receiver.SendMessage("DialogueProgress", progress, SendMessageOptions.DontRequireReceiver);
             bool isPJ = activeChat.characters[progress] == DialogPart.Personaje.PJ;
             imagePlayer.gameObject.SetActive(isPJ);
@@ -62,6 +71,10 @@ public class DialogueController : MonoBehaviour {
                 }
             }
             if (progress == 3 && SceneManager.GetActiveScene().buildIndex == 0) progress += 2;
+            if (activeChat.isEnder[progress])
+            {
+                nextEnds = true;
+            }
             progress++;
         }
         else
@@ -77,14 +90,19 @@ public class DialogueController : MonoBehaviour {
 
     public void StartDialogue()
     {
+        if (shouldWave)
+            GameObject.Find("PJ_Ingeniero").GetComponent<Animator>().SetTrigger("Wave");
         onDialogue = true;
         chat.SetActive(true);
         progress = 0;
+        nextEnds = false;
         NextDialogue();
     }
 
     public void EndDialogue()
     {
+        if (shouldWave)
+            GameObject.Find("PJ_Ingeniero").GetComponent<Animator>().SetTrigger("Wave");
         onDialogue = false;
         chat.SetActive(false);
         receiver.SendMessage("DialogueProgress", progress, SendMessageOptions.DontRequireReceiver);

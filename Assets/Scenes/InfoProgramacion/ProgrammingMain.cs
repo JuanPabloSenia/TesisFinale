@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ProgrammingMain : MonoBehaviour
 {
+    public DialogueController dialog;
+
     public static int currentLevel = 1;
     public static int maxLevel = 6;
 
@@ -38,6 +40,8 @@ public class ProgrammingMain : MonoBehaviour
     public RectTransform canvasTransform;
     public GameObject badRepeatsAlert;
 
+    public bool isTutorial = false;
+
     public enum actionName
     {
         EMPTY,
@@ -51,6 +55,8 @@ public class ProgrammingMain : MonoBehaviour
 
     void Start()
     {
+        if (dialog != null)
+            dialog.StartDialogue();
         totalCoins = coinsContainer.childCount;
         currentCoins = 0;
 
@@ -68,7 +74,11 @@ public class ProgrammingMain : MonoBehaviour
         {
             RaycastHit hit;
             Ray ray = new Ray(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector3.forward);
-            if (Physics.Raycast(ray, out hit, 100))
+            if (dialog != null)
+            {
+                isTutorial = dialog.onDialogue;
+            }
+            if (Physics.Raycast(ray, out hit, 100) && !isTutorial)
             {
                 switch (hit.collider.transform.name)
                 {
@@ -133,21 +143,21 @@ public class ProgrammingMain : MonoBehaviour
                         if (cursor < letters.Length && !isPlaying)
                         {
                             currentList.Insert(cursor, possibleActions[1]);
-                        cursor++;
+                            cursor++;
                         }
                         break;
                     case "RotateLeft":
                         if (cursor < letters.Length && !isPlaying)
                         {
                             currentList.Insert(cursor, possibleActions[2]);
-                        cursor++;
+                            cursor++;
                         }
                         break;
                     case "RotateRight":
                         if (cursor < letters.Length && !isPlaying)
                         {
                             currentList.Insert(cursor, possibleActions[3]);
-                        cursor++;
+                            cursor++;
                         }
                         break;
                     case "StartRepeat":
@@ -161,7 +171,7 @@ public class ProgrammingMain : MonoBehaviour
                         if (cursor < letters.Length && !isPlaying)
                         {
                             currentList.Insert(cursor, possibleActions[5]);
-                        cursor++;
+                            cursor++;
                         }
                         break;
                     case "Delete":
@@ -192,8 +202,9 @@ public class ProgrammingMain : MonoBehaviour
             }
         }
         //Exception for the cursor to work on the last letter
-        if (cursor == letters.Length)
+        if (cursor == letters.Length && letters.Length > 0)
         {
+            Debug.Log(letters.Length - 1);
             cursorTransform.position = letters[letters.Length-1].transform.position + Vector3.right;
         }
     }
@@ -334,5 +345,30 @@ public class ProgrammingMain : MonoBehaviour
             currentCoins++;
             Destroy(other.gameObject);
         }
+    }
+
+    public void DialogueProgress(int a)
+    {
+
+        switch (a)
+        {
+            case 2:
+                isTutorial = false;
+                break;
+        }
+        /*batteryHL.SetActive(false);
+        cellHL.SetActive(false);
+        if (activeLevel == 0)
+        {
+            switch (a)
+            {
+                case 2:
+                    cellHL.SetActive(true);
+                    break;
+                case 3:
+                    batteryHL.SetActive(true);
+                    break;
+            }
+        }*/
     }
 }
