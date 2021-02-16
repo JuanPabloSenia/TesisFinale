@@ -87,6 +87,9 @@ public class ProgrammingMain : MonoBehaviour
             {
                 switch (hit.collider.transform.name)
                 {
+                    case "ExitLevel":
+                        SceneManager.LoadScene("Informatica");
+                        break;
                     case "Replay":
                         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                         break;
