@@ -42,6 +42,9 @@ public class ProgrammingMain : MonoBehaviour
 
     public bool isTutorial = false;
 
+    Vector3 ogPos;
+    Quaternion ogRot;
+
     public enum actionName
     {
         EMPTY,
@@ -55,6 +58,8 @@ public class ProgrammingMain : MonoBehaviour
 
     void Start()
     {
+        ogPos = playerTransform.position;
+        ogRot = playerTransform.rotation;
         if (dialog != null)
             dialog.StartDialogue();
         totalCoins = coinsContainer.childCount;
@@ -216,8 +221,8 @@ public class ProgrammingMain : MonoBehaviour
         {
             coinsContainer.GetChild(i).gameObject.SetActive(true);
         }
-        playerTransform.position = Vector3.zero;
-        playerTransform.rotation = Quaternion.Euler(Vector3.zero);
+        playerTransform.position = ogPos;
+        playerTransform.rotation = ogRot;
         progressInGame = 0;
     }
 
