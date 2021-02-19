@@ -2,8 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DontDestroy : MonoBehaviour {
+
+    public static bool elecFinished = false;
+    public static bool elecFixed = false;
+    public static bool infoFinished = false;
+    public static bool infoFixed = false;
+
+    public static float timer = 0;
 
     public static bool isMale;
 
@@ -73,7 +81,6 @@ public class DontDestroy : MonoBehaviour {
 
     void Update()
     {
-        Debug.Log(isMale+ " is male");
         if (MusicManagerSource.volume >= .6f)
             fadingIn = false;
         if (fadingIn)
@@ -86,5 +93,38 @@ public class DontDestroy : MonoBehaviour {
         }
         Vector3 camPos = GameObject.Find("Main Camera").transform.position;
         MusicManagerSource.transform.position = camPos;
+
+        if (SceneManager.GetActiveScene().name == "PeroniaLevel")
+        {
+            timer += Time.deltaTime;
+            if (elecFixed)
+            {
+                GameObject.Find("Electro").GetComponent<Image>().fillAmount = 1;
+                GameObject.Find("ElectroIcon").GetComponent<Image>().fillAmount = 1;
+            }
+            else if (elecFinished)
+            {
+                GameObject.Find("Electro").GetComponent<Image>().fillAmount = (timer - 1f) / 2f;
+                GameObject.Find("ElectroIcon").GetComponent<Image>().fillAmount = (timer - 1f) / 2f;
+                if (timer > 3)
+                {
+                    elecFixed = true;
+                }
+            }
+            if (infoFixed)
+            {
+                GameObject.Find("Info").GetComponent<Image>().fillAmount = 1;
+                GameObject.Find("InfoIcon").GetComponent<Image>().fillAmount = 1;
+            }
+            else if (infoFinished)
+            {
+                GameObject.Find("Info").GetComponent<Image>().fillAmount = (timer - 1f) / 2f;
+                GameObject.Find("InfoIcon").GetComponent<Image>().fillAmount = (timer - 1f) / 2f;
+                if (timer > 3)
+                {
+                    infoFixed = true;
+                }
+            }
+        }
     }
 }

@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour, IPointerDownHandler
 {
+    public string link;
+
     public string playScene;
 
     public float topMax;
@@ -53,7 +55,7 @@ public class CameraController : MonoBehaviour, IPointerDownHandler
                 }
                 if (hit.collider.name == "buttonInfo")
                 {
-                    Application.OpenURL("https://estudiaingenieria.com.ar/");
+                    Application.OpenURL(link);
                     CharacterMovement.INSTANCE.navMeshAgent.isStopped = true;
                 }
                 if (hit.collider.name == "buttonMenu")

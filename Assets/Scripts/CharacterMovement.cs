@@ -63,7 +63,8 @@ public class CharacterMovement : MonoBehaviour {
             /*playerSprite.flipX = (pastPosition.x < actualPos.x) ? false : true;
             playerSprite.sprite = (pastPosition.y < actualPos.y) ? plBack : plFront;
             pastPosition = actualPos;*/
-            if ((actualPos - pastPosition).magnitude > .013f)
+            //if ((actualPos - pastPosition).magnitude > .013f)
+            if (!navMeshAgent.isStopped)
             {
                 anim.SetBool("moving", true);
             }

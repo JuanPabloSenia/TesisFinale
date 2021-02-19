@@ -22,7 +22,7 @@ public class DialogueController : MonoBehaviour {
     public Text nameIng;
     public Text chatTextLeft;
     public Text chatTextRight;
-
+    
     public Image imagePlayer;
     public Image imageIng;
 

@@ -78,6 +78,12 @@ public class ProgrammingMain : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            DontDestroy.timer = -2;
+            DontDestroy.infoFinished = true;
+            SceneManager.LoadScene("PeroniaLevel");
+        }
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             RaycastHit hit;
@@ -99,7 +105,9 @@ public class ProgrammingMain : MonoBehaviour
                     case "NextLevel":
                         if (currentLevel == maxLevel)
                         {
-                            SceneManager.LoadScene("Informatica");
+                            DontDestroy.timer = -2;
+                            DontDestroy.infoFinished = true;
+                            SceneManager.LoadScene("PeroniaLevel");
                         }
                         else
                         {

@@ -1678,6 +1678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26183a578afad7c45a84b83d57464d4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  link: https://estudiaingenieria.com.ar/ingenieria-electronica/
   playScene: TubosGiratorios
   topMax: 1.44
   topMin: -11.8

@@ -90,7 +90,9 @@ public class PipeController : MonoBehaviour
         }
         if (activeLevel == 9)
         {
-            SceneManager.LoadScene("Electronica");
+            DontDestroy.timer = -2;
+            DontDestroy.elecFinished = true;
+            SceneManager.LoadScene("PeroniaLevel");
         }
         levelFinished = false;
         if (levelCreatorMode)
@@ -169,6 +171,13 @@ public class PipeController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            DontDestroy.timer = -2;
+            DontDestroy.elecFinished = true;
+            SceneManager.LoadScene("PeroniaLevel");
+        }
+
         if (levelFinished)
         {
             loadBarImage.fillAmount = Mathf.Lerp(loadBarImage.fillAmount, (float)connectedPoints / 20f, Time.deltaTime * 1.5f);
